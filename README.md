@@ -20,17 +20,17 @@ Here's the template:
 -------------------------------------------------------------------------------
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
-[your text here]
+[Gooroom]
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-[your text here]
+[Gooroom Platform]
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-[your text here]
+[To make secure boot on Gooroom OS]
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -40,10 +40,10 @@ An authorized reviewer will initiate contact verification by sending each securi
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
 
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key fingerprint:
+- Name:Gooroom
+- Position: Gooroom Director
+- Email address: gooroom@gooroom.kr
+- PGP key fingerprint: 
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
