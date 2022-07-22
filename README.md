@@ -159,6 +159,7 @@ No changes
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
 
+9f6a4b12cf5390181c928bcfc809c38f1283bcd8107c4845d0008ebc49a69c0e
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
@@ -190,12 +191,12 @@ Office server in the firewall
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-[your text here]
+No not at all
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-[your text here]
+No
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
