@@ -141,29 +141,29 @@ Not Use
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 ### If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 -------------------------------------------------------------------------------
-[your text here]
+Debian
 
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-[your text here]
+https://github.com/ozun/shim-review/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
-[your text here]
+No changes
 
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-[your text here]
+
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-[your text here]
+Office server in the firewall
 
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
