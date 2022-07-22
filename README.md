@@ -78,7 +78,7 @@ https://github.com/ozun/shim-review
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+Not at all
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
