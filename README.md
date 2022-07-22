@@ -68,7 +68,7 @@ Please create your shim binaries starting with the 15.6 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-[your text here]
+https://github.com/ozun/shim-review
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
@@ -83,7 +83,7 @@ Not at all
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-[your text here]
+Debian 
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -114,7 +114,7 @@ Not at all
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-[your text here]
+No
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
@@ -135,7 +135,7 @@ Not at all
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-[your text here]
+Not Use
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
