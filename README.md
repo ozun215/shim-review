@@ -52,9 +52,9 @@ well known in the Linux community.)
 -------------------------------------------------------------------------------
 ### Who is the secondary contact for security updates, etc.?
 -------------------------------------------------------------------------------
-- Name:Jongkyung Woo
-- Position:Gooroom OS Leader
-- Email address:jongkyung.woo@gmail.com
+- Name:YoungJun Park
+- Position:Gooroom OS Engineer
+- Email address:zunn@eactive.co.kr
 - PGP key fingerprint:
 
 (Key should be signed by the other security contacts, pushed to a keyserver
