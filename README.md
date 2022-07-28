@@ -68,12 +68,12 @@ Please create your shim binaries starting with the 15.6 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun/shim-review
+https://github.com/ozun215/shim-review
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun/shim-review
+https://github.com/ozun215/shim-review
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
