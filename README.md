@@ -148,7 +148,7 @@ Debian
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun/shim-review/build.log
+https://github.com/ozun215/shim-review/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
