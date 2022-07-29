@@ -43,7 +43,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 - Name:Gooroom
 - Position:Gooroom Director
 - Email address:gooroom@gooroom.kr
-- PGP key fingerprint:
+- PGP key fingerprint:CF88 563D D127 189E 4E6C 1549 3A76 0507 2D1D A9A0
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
