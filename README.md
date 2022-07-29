@@ -55,7 +55,7 @@ well known in the Linux community.)
 - Name:YoungJun Park
 - Position:Gooroom OS Engineer
 - Email address:zunn@eactive.co.kr
-- PGP key fingerprint:
+- PGP key fingerprint: 4D3B 299E 25CB C5C5 7FCB 2801 C52A D23F D5E6 CAE9
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
