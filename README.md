@@ -170,6 +170,7 @@ The keys are in a specially hardened machine that is in our build environment
 ### Do you use EV certificates as embedded certificates in the SHIM?
 -------------------------------------------------------------------------------
 No
+
 -------------------------------------------------------------------------------
 ### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
