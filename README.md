@@ -181,7 +181,7 @@ grub2,1,Free Software Foundation,grub,2.06-3,https://www.gnu.org/software/grub/
 grub2.debian,1,Debian,grub,2.06-3,https://tracker.debian.org/pkg/grub2
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-fwupd,1,UEFI update daemon,fwupd,1.5.1,https://github.com/fwupd/fwupd
+fwupd,1,UEFI update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
 fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
