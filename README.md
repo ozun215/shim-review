@@ -148,7 +148,7 @@ Debian 11
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220805/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
@@ -178,15 +178,15 @@ No
 -------------------------------------------------------------------------------
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,1,Free Software Foundation,grub,2.04,https://www.gnu.org/software/grub/
-grub.deepin,1,Deepin,grub2,2.04-17,https://www.deepin.org/en/
-
-sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
-fwupd-deepin,1,Deepin,fwupd,1.5.7-3,https://www.deepin.org/en/
+grub.debian,1,Debian,grub,0.97-77,https://tracker.debian.org/pkg/grub
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.deepin,1,Deepin,shim,15.5-1,https://www.deepin.org/en/
+fwupd,1,UEFI update daemon,fwupd,1.5.1,https://github.com/fwupd/fwupd
+fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
+
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.debian,1,Debian,shim,15.6-1,https://tracker.debian.org/pkg/shim
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
