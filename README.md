@@ -177,15 +177,15 @@ No
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,1,Free Software Foundation,grub,2.04,https://www.gnu.org/software/grub/
-grub.debian,1,Debian,grub,0.97-77,https://tracker.debian.org/pkg/grub
+grub2,1,Free Software Foundation,grub,2.06-3,https://www.gnu.org/software/grub/
+grub2.debian,1,Debian,grub,2.06-3,https://tracker.debian.org/pkg/grub2
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 fwupd,1,UEFI update daemon,fwupd,1.5.1,https://github.com/fwupd/fwupd
 fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.debian,1,Debian,shim,15.6-1,https://tracker.debian.org/pkg/shim
 
 -------------------------------------------------------------------------------
@@ -196,7 +196,7 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-grub2 (2.04-20) unstable
+grub2 (2.06-3) unstable
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
@@ -206,7 +206,7 @@ No not at all
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-No it does not launches any other binaries
+Use Grub2 2.06-3
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
