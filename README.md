@@ -110,7 +110,7 @@ We have our own downstream implementation. We're working on upstreaming patches,
 * CVE-2022-28735
 * CVE-2022-28736
 * CVE-2022-28737
-
+-------------------------------------------------------------------------------
 Same as "Debian 11"'s work
 
 CVE-2020-14372
@@ -159,6 +159,7 @@ This was fixed in shim 15.6, so we have this fix too.
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
+Same as "Debian 11"'s work
 
 For the July 2020 boothole issues, we provided Microsoft with the details of our intermediate signing cert and that was included in the DBX update at the time. ("Debian Secure Boot Signer": fingerprint f156d24f5d4e775da0e6a9111f074cfce701939d688c64dba093f97753434f2c). We moved to a new cert ("Debian Secure Boot Signer 2020": fingerprint 3a91a54f9f46a720fe5bbd2390538ba557da0c2ed5286f5351fe04fff254ec31).
 
