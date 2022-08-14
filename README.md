@@ -30,7 +30,7 @@ Gooroom Platform
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-To make secure boot on Gooroom OS
+To secure boot working on Gooroom OS
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -68,12 +68,12 @@ Please create your shim binaries starting with the 15.6 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review
+Yes, we are using the source from https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-Our build service isn't publicly available.
+https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220814
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -83,7 +83,7 @@ No patch applied
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-This is a "Debian-like" implementation.
+We have our own downstream implementation. We're working on upstreaming patches, but it's slow going...
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -111,10 +111,76 @@ This is a "Debian-like" implementation.
 * CVE-2022-28736
 * CVE-2022-28737
 
+Same as "Debian 11"'s work
+
+CVE-2020-14372
+CVE-2020-25632
+CVE-2020-25647
+CVE-2020-27749
+CVE-2020-27779
+CVE-2021-20225
+CVE-2021-20233
+CVE-2020-10713
+CVE-2020-14308
+CVE-2020-14309
+CVE-2020-14310
+CVE-2020-14311
+CVE-2020-15705
+CVE-2021-3418 (if you are shipping the shim_lock module)
+We include patches for all of: CVE-2020-14372, CVE-2020-25632, CVE-2020-25647, CVE-2020-27749, CVE-2020-27779, CVE-2021-20225, CVE-2021-20233, CVE-2020-10713, CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311
+
+For the other two CVEs listed here:
+
+CVE-2020-15705 does not affect our codebase due to other patches (as explained back in the boothole days).
+
+We haven't used the shim_lock module, so CVE-2021-3418 does not apply to us.
+
+CVE-2021-3695
+
+CVE-2021-3696
+
+CVE-2021-3697
+
+CVE-2022-28733
+
+CVE-2022-28734
+
+CVE-2022-28735
+
+CVE-2022-28736
+
+We have patches included for all of these in our GRUB2 packages based on version 2.06. Older versions of GRUB2 are still around in Debian repos, but will be revoked via SBAT updates.
+
+CVE-2022-28737
+This was fixed in shim 15.6, so we have this fix too.
+
+
+
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-Yes it is
+
+For the July 2020 boothole issues, we provided Microsoft with the details of our intermediate signing cert and that was included in the DBX update at the time. ("Debian Secure Boot Signer": fingerprint f156d24f5d4e775da0e6a9111f074cfce701939d688c64dba093f97753434f2c). We moved to a new cert ("Debian Secure Boot Signer 2020": fingerprint 3a91a54f9f46a720fe5bbd2390538ba557da0c2ed5286f5351fe04fff254ec31).
+
+For the March 2021 issues, we again revoked our signer cert ("Debian Secure Boot Signer 2020": fingerprint 3a91a54f9f46a720fe5bbd2390538ba557da0c2ed5286f5351fe04fff254ec31) and switched to new per-project certs for each of the things we sign ourselves:
+
+Debian Secure Boot Signer 2021 - fwupd
+(fingerprint 309cf4b37d11af9dbf988b17dfa856443118a41395d094fa7acfe37bcd690e33)
+Debian Secure Boot Signer 2021 - fwupdate
+(fingerprint e3bd875aaac396020a1eb2a7e6e185dd4868fdf7e5d69b974215bd24cab04b5d)
+Debian Secure Boot Signer 2021 - grub2
+(fingerprint 0ec31f19134e46a4ef928bd5f0c60ee52f6f817011b5880cb6c8ac953c23510c)
+Debian Secure Boot Signer 2021 - linux
+(fingerprint 88ce3137175e3840b74356a8c3cae4bdd4af1b557a7367f6704ed8c2bd1fbf1d)
+Debian Secure Boot Signer 2021 - shim
+(fingerprint 40eced276ab0a64fc369db1900bd15536a1fb7d6cc0969a0ea7c7594bb0b85e2)
+In addition to those changes, we provided Microsoft with details of all the shim binaries they have ever signed for us, so they can be revoked to enforce switching to binaries including SBAT in the future.
+
+Also, the shim binary here includes a vendor DBX list that blocks all of those older vulnerable grub binaries that we ever signed for this architecture.
+
+For the June 2022 CVE list, older versions of GRUB2 are still around in Debian repos, but will be revoked via SBAT updates.
+
+
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
@@ -123,19 +189,23 @@ Yes it is
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-YES it is
+Same as "Debian 11"'s work
+
+We applied the first two fixes during the boothole event and they are still there in all our signed kernels.
+
+The kgdb fix is included in our current kernel sources, but we don't enable kgdb anyway in our binary buil
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
-We don't use this
+We don't use vendor_db.
 
 -------------------------------------------------------------------------------
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-Not Use
+The shim binary here includes a vendor DBX list that blocks all of the grub binaries that we have ever signed for each architecture prior to SBAT being introduced
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
@@ -143,12 +213,20 @@ Not Use
 -------------------------------------------------------------------------------
 Debian 11
 
+We recommend reproducing the binary by way of using the supplied Dockerfile:
+
+docker build .
+
+The binaries build reproducibly on Debian "unstable" as of 2021-06-23.
+
+Versions used can be found in the build logs.
+
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220805/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220814/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
@@ -159,7 +237,7 @@ No changes
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
 
-9f6a4b12cf5390181c928bcfc809c38f1283bcd8107c4845d0008ebc49a69c0e
+9f6a4b12cf5390181c928bcfc809c38f1283bcd8107c4845d0008ebc49a69c0e shimx64.efi
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
@@ -176,17 +254,11 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub2,1,Free Software Foundation,grub,2.06-3,https://www.gnu.org/software/grub/
-grub2.debian,1,Debian,grub,2.06-3,https://tracker.debian.org/pkg/grub2
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/ grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-fwupd,1,UEFI update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
-fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.debian,1,Debian,shim,15.6-1,https://tracker.debian.org/pkg/shim
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim shim.debian,1,Debian,shim,15.6,https://tracker.debian.org/pkg/shim
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
@@ -196,22 +268,23 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-grub2 (2.06-3) unstable
-
+https://salsa.debian.org/grub-team/grub.git, branch "bullseye" is the current version (2.06-3~deb11u1) for Debian Bullseye. It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-No not at all
+It will load fwupd as already mentioned above.
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-Use Grub2 2.06-3
+None - it will only load a signed, Secureboot Linux
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
 -------------------------------------------------------------------------------
-N/A
+Debian's signed Linux packages have a common set of lockdown patches.
+Debian's signed grub2 packages include common secure boot patches so they will only load appropriately signed binaries.
+Debian's signed fwupd packages will not execute other binaries
 
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
