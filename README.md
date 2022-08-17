@@ -73,7 +73,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220816
+https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220817-4
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -227,7 +227,7 @@ Versions used can be found in the build logs.
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220816/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220817-4/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
@@ -238,7 +238,7 @@ No changes
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
 
-9f6a4b12cf5390181c928bcfc809c38f1283bcd8107c4845d0008ebc49a69c0e shimx64.efi
+cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?

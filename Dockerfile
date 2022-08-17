@@ -5,6 +5,8 @@ RUN echo "deb-src http://deb.debian.org/debian-security bullseye-security main" 
 RUN apt-get update -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential git-buildpackage
 RUN git clone https://github.com/ozun215/shim-review.git
+WORKDIR /shim-review
+RUN git checkout gooroom-3.0
 WORKDIR /
 RUN git clone https://github.com/gooroom/shim.git
 WORKDIR /shim
