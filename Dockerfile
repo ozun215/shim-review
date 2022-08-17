@@ -5,12 +5,10 @@ RUN echo "deb-src http://deb.debian.org/debian-security bullseye-security main" 
 RUN apt-get update -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential git-buildpackage
 RUN git clone https://github.com/ozun215/shim-review.git
-WORKDIR /shim-review
-RUN git checkout https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220814
 WORKDIR /
 RUN git clone https://github.com/gooroom/shim.git
 WORKDIR /shim
-RUN git checkout https://github.com/gooroom/shim/releases/tag/gooroom%2F15.6-1%2Bgrm3u1
+RUN git checkout gooroom-3.0
 RUN apt-get build-dep -y .
 RUN gbp buildpackage -us -uc --git-ignore-branch
 WORKDIR /
