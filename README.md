@@ -73,7 +73,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220817
+https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220817-2
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -227,7 +227,7 @@ Versions used can be found in the build logs.
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220816/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220817-2/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
