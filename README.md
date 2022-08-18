@@ -162,7 +162,7 @@ CVE-2022-28737
 This was fixed in shim 15.6, so we have this fix too.
 
 
-
+-------------------------------------------------------------------------------
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
@@ -199,9 +199,9 @@ For the June 2022 CVE list, older versions of GRUB2 are still around in Debian r
 -------------------------------------------------------------------------------
 Same as "Debian 11"'s work
 
-We applied the first two fixes during the boothole event and they are still there in all our signed kernels.
+It is applied the first two fixes during the boothole event and they are still there in all debian's signed kernels.
 
-The kgdb fix is included in our current kernel sources, but we don't enable kgdb anyway in our binary buil
+The kgdb fix is included in debian's current kernel sources, but debian don't enable kgdb anyway in debian's binary build.
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -225,10 +225,9 @@ Dockerfile is provided to reproduce this build
 
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
--------------------------------------------------------------------------------
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
-
 -------------------------------------------------------------------------------
+
 https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220818/build.log
 
 -------------------------------------------------------------------------------
