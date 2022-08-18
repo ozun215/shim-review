@@ -20,17 +20,24 @@ Here's the template:
 -------------------------------------------------------------------------------
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
-Gooroom
+Cloud Platform Forum (www.gooroom.kr).
+Korean companies such as Eclectic, Hangul and Computer, AhnLab, and TmaxOS are participating in the Cloud Platform Forum.
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-Gooroom Platform
+Gooroom OS.
+Cloud OS is a Davian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
+Cloud OS is a security OS developed by the Cloud Platform Forum.
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-To secure boot working on Gooroom OS
+Gooroom OS is aimed at open-source OS that anyone can use freely, such as Debian, Ubuntu, and Fedora.
+Gooroom OS has been developed and released up to version 3.0.
+Gooroom OS currently supports Secure Boot
+By the way, there was no SHIM signed by MS, Secure Boot was only available on PC that could register custom keys in UEFI.
+Using SHIM signed by MS, Gooroom OS requests signatures for use by users worldwide.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -40,10 +47,9 @@ An authorized reviewer will initiate contact verification by sending each securi
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
 
 -------------------------------------------------------------------------------
-- Name:Gooroom
+- Name:JongKyoung Woo
 - Position:Gooroom Director
-- Email address:gooroom@gooroom.kr
-- PGP key fingerprint:CF88 563D D127 189E 4E6C 1549 3A76 0507 2D1D A9A0
+- Email address:jkwoo@eactive.co.kr
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
@@ -73,7 +79,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220817-4
+https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220818
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -227,7 +233,7 @@ Versions used can be found in the build logs.
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220817-4/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220818/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
