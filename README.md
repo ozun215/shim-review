@@ -255,11 +255,19 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/ grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.gooroom,1,Cloud Platform Forum,grub2,2.06-3,gooroom@gooroom.kr
 
-sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim shim.debian,1,Debian,shim,15.6,https://tracker.debian.org/pkg/shim
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
+fwupd.gooroom,1,Cloud Platform Forum,fwupd,1.5.7-4,gooroom@gooroom.kr
+
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.gooroom,1,Cloud Platform Forum,shim,15.6,gooroom@gooroom.kr
+
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
