@@ -80,7 +80,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220818
+https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220819
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -90,7 +90,8 @@ No patch applied
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-We have our own downstream implementation. We're working on upstreaming patches, but it's slow going...
+We have our own downstream implementation. 
+We are also following on debian's patches and reflect these patches immediately
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -228,7 +229,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220818/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220819/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
