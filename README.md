@@ -20,15 +20,15 @@ Here's the template:
 -------------------------------------------------------------------------------
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
-Cloud Platform Forum (www.gooroom.kr).
+Gooroom Platform Forum (www.gooroom.kr).
 Korean companies such as Eclectic, Hangul and Computer, AhnLab, and TmaxOS are participating in the Cloud Platform Forum.
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
 Gooroom OS.
-Cloud OS is a Davian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
-Cloud OS is a security OS developed by the Cloud Platform Forum.
+Gooroom OS is a Davian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
+Gooroom OS is a security OS developed by the Cloud Platform Forum.
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
@@ -50,6 +50,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 - Name:JongKyoung Woo
 - Position:Gooroom Director
 - Email address:jkwoo@eactive.co.kr
+- PGP key fingerprint: B4AB 26CB F31F 16BE A454 0416 246E 82EC 95B3 6321 
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
@@ -212,7 +213,7 @@ We don't use vendor_db.
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-The shim binary here includes a vendor DBX list that blocks all of the grub binaries that we have ever signed for each architecture prior to SBAT being introduced
+Older grub won't be able to boot due to the increase of global generation number in SBAT
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
@@ -220,16 +221,11 @@ The shim binary here includes a vendor DBX list that blocks all of the grub bina
 -------------------------------------------------------------------------------
 Debian 11
 
-We recommend reproducing the binary by way of using the supplied Dockerfile:
-
-docker build .
-
-The binaries build reproducibly on Debian "unstable" as of 2021-06-23.
-
-Versions used can be found in the build logs.
+Dockerfile is provided to reproduce this build
 
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
+-------------------------------------------------------------------------------
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
@@ -261,11 +257,17 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/ grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.gooroom,1,Gooroom Platform Forum,grub2,2.06-3,gooroom@gooroom.kr
 
-sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
+fwupd.gooroom,1,Gooroom Platform Forum,fwupd,1.5.7-4,gooroom@gooroom.kr
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim shim.debian,1,Debian,shim,15.6,https://tracker.debian.org/pkg/shim
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.gooroom,1,Gooroom Platform Forum,shim,15.6,gooroom@gooroom.kr
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
