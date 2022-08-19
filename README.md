@@ -247,7 +247,7 @@ cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-The keys are in a specially hardened machine that is in our build environment
+The keys are kept in USB HSM and the HSM also kept in security deposit box.
 
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
