@@ -47,7 +47,7 @@ An authorized reviewer will initiate contact verification by sending each securi
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
 
 -------------------------------------------------------------------------------
-- Name:JongKyoung Woo
+- Name:JongKyung Woo
 - Position:Gooroom Director
 - Email address:jongkyung.woo@gmail.com
 - PGP key fingerprint: E26B B70B CCAD 03A9 7642 D44D 52AD 80DD D371 21DB
