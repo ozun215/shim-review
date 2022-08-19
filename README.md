@@ -49,8 +49,8 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 -------------------------------------------------------------------------------
 - Name:JongKyoung Woo
 - Position:Gooroom Director
-- Email address:jkwoo@eactive.co.kr
-- PGP key fingerprint: B4AB 26CB F31F 16BE A454 0416 246E 82EC 95B3 6321 
+- Email address:jkwoo@gooroom.kr
+- PGP key fingerprint: E26B B70B CCAD 03A9 7642 D44D 52AD 80DD D371 21DB
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
